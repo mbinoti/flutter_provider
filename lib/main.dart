@@ -67,9 +67,9 @@ class _DemoItem {
 }
 
 //=============================================
-// 1? Provider<T> - valor simples
+// 1) Provider<T> - valor simples
 //=============================================
-/// Provider<T> e como um recado no mural: todo mundo aqui dentro pode ler.
+/// `Provider<T>` e como um recado no mural: todo mundo aqui dentro pode ler.
 /// Esta tela so mostra um valor simples para os filhos usarem.
 class DemoProviderSimple extends StatelessWidget {
   const DemoProviderSimple({super.key});
@@ -149,7 +149,7 @@ class DemoFutureProvider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FutureProvider<String?>(
+    return FutureProvider<String>(
       create: (_) => fetchMessage(),
       initialData: 'Carregando...',
       child: Builder(builder: (context) {
@@ -157,7 +157,7 @@ class DemoFutureProvider extends StatelessWidget {
         return Scaffold(
           appBar: AppBar(title: const Text('FutureProvider')),
           body: Center(
-            child: Text(message ?? 'Carregando',
+            child: Text(message,
                 style: Theme.of(context).textTheme.headlineMedium),
           ),
         );
